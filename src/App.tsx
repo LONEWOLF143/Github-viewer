@@ -1,11 +1,30 @@
+import Home from './pages/Home';
 import { FC } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './ui/Layout';
+import Repos from './pages/Repos';
+
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/repo",
+        element: <Repos />
+      }
+    ]
+
+  }
+
+])
 
 const App: FC = () => {
-  return (
-    <h1 className="mb-6 mt-6 px-6 py-6 text-center text-3xl underline md:text-4xl">
-      Hello world!
-    </h1>
-  );
+  return <RouterProvider router={router}/>
 };
 
 export default App;
