@@ -5,14 +5,7 @@ const Nav: FC = () => {
   return (
     <header className='px-5 py-8 w-full'>
       <nav className='max-container flex justify-between'>
-        <div className='text-xl'>Github <span className='text-green-500 '>viewer</span></div>
-        <div>
-          <ul className='flex'>
-            <Link to="/"><li className='sm:text-2xl mr-5'>home</li></Link>
-            <Link to="repo"><li className='sm:text-2xl mr-5'>Repositories</li></Link>
-            <Link to="followers"><li className='sm:text-2xl mr-5'>Followers</li></Link>
-          </ul>
-        </div>
+        <Link to="/"><div className='text-xl flex-grow-1'>Github <span className='text-green-500 '>viewer</span></div></Link>
       </nav>
     </header>
     
