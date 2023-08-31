@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Home: FC = () => {
   return (
-    <div>
+    <div className='max-w-4xl mx-auto'>
        <div>
           <ul className='flex m-5'>
             <Link to="/"><li className='sm:text-[18px] mr-5 bg-black py-2 px-4 font-semibold rounded-md text-green-500 hover:text-black hover:bg-green-500 duration-100'>home</li></Link>

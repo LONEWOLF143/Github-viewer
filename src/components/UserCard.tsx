@@ -2,16 +2,16 @@ import {FC} from 'react'
 
 const UserCard: FC= () => {
   return (
-    <div className=" max-w-[90vw] aspect-[16/9] mx-5 mt-10 w-[375px] bg-slate-300 overflow-hidden">
-  <figure><img src="" alt="Movie"/></figure>
-  <div className="">
-    <p>name:</p>
-    <p>Company:</p>
-    <p>Location:</p>
-    <p>Followers:</p>
-
+    <div className="card mt-7 w-96 bg-base-100 shadow-xl">
+    <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+    <div className="card-body">
+      <h2 className="card-title">name:</h2>
+      <p>Company:</p>
+      <p>Works at:</p>
+      <p>Location</p>
     </div>
   </div>
+
   )
 }
 
