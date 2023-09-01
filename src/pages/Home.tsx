@@ -2,8 +2,26 @@
 import UserCard from '../components/UserCard';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import {useUserContext} from "../context/UserContext";
 
 const Home: FC = () => {
+  const {
+     setSearchUser,
+      searchRequest,
+      searchInput,
+       setSearchInput
+    } = useUserContext()
+
+    const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+      event.preventDefault()
+      setSearchInput(event.target.value);
+    };
+
+    const handleSearch = () => {
+      setSearchUser(searchInput)
+
+      searchRequest()
+    }
   return (
     <div className='max-w-4xl mx-auto'>
        <div>
@@ -15,8 +33,10 @@ const Home: FC = () => {
         </div>
 
     <div className='px-5'>
-      <form className='flex'>
-        <input type="text" placeholder="search" className='border py-2 rounded-xl px-3' />
+      <form className='flex' onClick={handleSearch}>
+        <input type="text"
+           onChange={handleSearchInputChange}
+         value={searchInput} placeholder="search" className='border py-2 rounded-xl px-3' />
         <button type='submit' className='ml-1 border px-4 py-2 hover:bg-black hover:text-white duration-300 font-medium rounded-xl text-base'>submit</button>
       </form>
     </div>
