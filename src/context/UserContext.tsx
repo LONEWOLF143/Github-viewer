@@ -7,8 +7,6 @@ import React, { createContext, useEffect, useState } from 'react';
 
 export type GitUserType = {
   searchUser: string;
-  searchInput: string
-   setSearchInput: React.Dispatch<React.SetStateAction<string>>
   userExist: User | null;
   followers: Follower[] | null;
   gistsList: Gist[] | null;
@@ -28,7 +26,6 @@ type UserContextProps = {
 export const GitContext = createContext({} as GitUserType);
 
 const UserContext = ({ children }: UserContextProps) => {
-    const [searchInput, setSearchInput] = useState<string>('');
   const [searchUser, setSearchUser] = useState<string>('');
   const [userExist, setUserExist] = useState<User | null>(null);
   const [followers, setFollowers] = useState<Follower[] | null>(null);
@@ -38,6 +35,7 @@ const UserContext = ({ children }: UserContextProps) => {
   const searchRequest = async () => {
     try {
       const { data } = await axios.get<User>(`https://api.github.com/users/${searchUser}`);
+      console.log(data)
       setUserExist(data);
 
       // Fetch follower data
@@ -57,7 +55,6 @@ const UserContext = ({ children }: UserContextProps) => {
   };
 
   useEffect(() => {
-    // Trigger the fetch when needed by calling searchRequest
     if (searchUser) {
       searchRequest();
     }
@@ -77,8 +74,6 @@ const UserContext = ({ children }: UserContextProps) => {
         setGistsLists,
         setRepositoriesList,
         searchRequest,
-        searchInput,
-         setSearchInput
       }}
     >
       {children}
