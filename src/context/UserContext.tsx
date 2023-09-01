@@ -5,7 +5,7 @@ import { Repo } from 'interfaces/Repo';
 import { User } from 'interfaces/User';
 import React, { createContext, useEffect, useState } from 'react';
 
-type GitUserType = {
+export type GitUserType = {
   searchUser: string;
   searchInput: string
    setSearchInput: React.Dispatch<React.SetStateAction<string>>
@@ -25,7 +25,7 @@ type UserContextProps = {
   children: React.ReactNode;
 };
 
-const GitContext = createContext({} as GitUserType);
+export const GitContext = createContext({} as GitUserType);
 
 const UserContext = ({ children }: UserContextProps) => {
     const [searchInput, setSearchInput] = useState<string>('');

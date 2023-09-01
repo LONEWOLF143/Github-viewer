@@ -1,8 +1,8 @@
 
 import UserCard from '../components/UserCard';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {useUserContext} from "../context/UserContext";
+import { GitContext } from '../context/UserContext'; // Import only the component
 
 const Home: FC = () => {
   const {
@@ -10,7 +10,7 @@ const Home: FC = () => {
       searchRequest,
       searchInput,
        setSearchInput
-    } = useUserContext()
+    } = useContext(GitContext)
 
     const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
       event.preventDefault()
