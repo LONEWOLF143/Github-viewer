@@ -1,5 +1,5 @@
 import UserCard from '../components/UserCard';
-import { FC, useContext, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GitContext, GitUserType } from '../context/UserContext'; // Import only the component
 
@@ -17,7 +17,9 @@ const Home: FC = () => {
     setSearchUser(event.target.value)
   };
 
-  const handleSearch = async () => {
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
     setIsLoading(true);
     await searchRequest(); // Wait for the API request to complete
     setIsLoading(false);
@@ -34,12 +36,12 @@ const Home: FC = () => {
       </div>
 
       <div className='px-5'>
-        <form className='flex' onClick={handleSearch}>
-          <input type="text"
-            onChange={handleSearchInputChange}
-            value={searchUser} placeholder="search" className='border py-2 rounded-xl px-3' />
-          <button type='submit' className='ml-1 border px-4 py-2 hover:bg-black hover:text-white duration-300 font-medium rounded-xl text-base'>submit</button>
-        </form>
+      <form className='flex' onSubmit={handleSearch}>
+  <input type="text"
+    onChange={handleSearchInputChange}
+    value={searchUser} placeholder="search" className='border py-2 rounded-xl px-3' />
+  <button type='submit' className='ml-1 border px-4 py-2 hover:bg-black hover:text-white duration-300 font-medium rounded-xl text-base'>submit</button>
+</form>
       </div>
       {isLoading && <p>Loading...</p>} {/* Display loading indicator */}
       {userExist && !isLoading && <UserCard foundUser={userExist} />}
