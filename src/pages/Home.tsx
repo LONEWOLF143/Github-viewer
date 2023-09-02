@@ -29,9 +29,10 @@ const Home: FC = () => {
     <div className='max-w-4xl mx-auto'>
       <div>
         <ul className='flex m-5'>
-          <Link to="/"><li className='sm:text-[18px] mr-5 bg-black py-2 px-4 font-semibold rounded-md text-green-500 hover:text-black hover:bg-green-500 duration-100'>home</li></Link>
-          <Link to="repo"><li className='sm:text-[18px] mr-5 bg-black py-2 px-4 font-semibold rounded-md text-green-500 hover:text-black hover:bg-green-500 duration-100'>Repositories</li></Link>
-          <Link to="followers"><li className=' text-[16px] sm:text-[18px] mr-5 bg-black py-2 px-4 font-semibold rounded-md text-green-500 hover:text-black hover:bg-green-500 duration-100'>Followers</li></Link>
+          <Link to="/"><li className='sm:text-lg mr-5 bg-black py-2 px-4 font-semibold rounded-md text-green-500 hover:text-black hover:bg-green-500 duration-100'>home</li></Link>
+          <Link to="repo"><li className='sm:text-lg mr-5 bg-black py-2 px-4 font-semibold rounded-md text-green-500 hover:text-black hover:bg-green-500 duration-100'>Repositories</li></Link>
+          <Link to="followers"><li className=' text-lg sm:text-[18px] mr-5 bg-black py-2 px-4 font-semibold rounded-md text-green-500 hover:text-black hover:bg-green-500 duration-100'>Followers</li></Link>
+          <Link to="gists"><li className=' text-lg sm:text-[18px] mr-5 bg-black py-2 px-4 font-semibold rounded-md text-green-500 hover:text-black hover:bg-green-500 duration-100'>Gists</li></Link>
         </ul>
       </div>
 

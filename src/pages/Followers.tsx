@@ -1,8 +1,12 @@
-import {FC} from 'react'
+import { GitContext } from '../context/UserContext'
+import {FC, useContext} from 'react'
 
 const Followers:FC = () => {
+  const {followers} = useContext(GitContext)
   return (
-    <div>Followers</div>
+    <div>{followers?.map(follower => (
+      <div>{follower.login}</div>
+     ))}</div>
   )
 }
 

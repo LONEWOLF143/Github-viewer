@@ -3,6 +3,8 @@ import { FC } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './ui/Layout';
 import Repos from './pages/Repos';
+import Followers from './pages/Followers';
+import Gists from './pages/Gists';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
       {
         path: "/repo",
         element: <Repos />
+      },
+      {
+        path: "/followers",
+        element: <Followers />
+      },
+      {
+        path: "/gists",
+        element: <Gists />
       }
     ]
 
