@@ -5,6 +5,9 @@ import { Repo } from 'interfaces/Repo';
 import { User } from 'interfaces/User';
 import React, { createContext, useEffect, useState } from 'react';
 
+const LOCAL_STORAGE_KEY = 'gitUserData';
+
+
 export type GitUserType = {
   searchUser: string;
   userExist: User | null;
@@ -55,8 +58,25 @@ const UserContext = ({ children }: UserContextProps) => {
   };
 
   useEffect(() => {
+    const savedUserData = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+    if (savedUserData) {
+      const parsedData = JSON.parse(savedUserData);
+      setUserExist(parsedData.userExist);
+      setFollowers(parsedData.followers);
+      setGistsLists(parsedData.gistsList);
+      setRepositoriesList(parsedData.repositoriesList);
+    }
+
     if (searchUser) {
       searchRequest();
+      const userDataToSave = {
+        userExist,
+        followers,
+        gistsList,
+        repositoriesList,
+      };
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(userDataToSave));
     }
   }, [searchUser]);
 
