@@ -1,8 +1,12 @@
-import {FC} from 'react'
+import { GitContext } from '../context/UserContext'
+import {FC, useContext} from 'react'
 
 const Gists:FC = () => {
+  const {gistsList} = useContext(GitContext)
   return (
-    <div>Gists</div>
+    <div>{gistsList?.map(gist => (
+      <h1>{gist.html_url}</h1>
+    ))}</div>
   )
 }
 
