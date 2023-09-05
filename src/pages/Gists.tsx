@@ -1,5 +1,6 @@
 import { GitContext } from '../context/UserContext'
 import {FC, useContext} from 'react'
+import { extractDate } from './Repos'
 
 const Gists:FC = () => {
   const {gistsList} = useContext(GitContext)
@@ -7,15 +8,20 @@ const Gists:FC = () => {
     
     <div className="mx-auto flex max-w-4xl flex-wrap gap-2">
       {gistsList?.map(gist => (
-      <div>
-      <h1><a href={gist.html_url} target="_blank" rel='noreferrence'>{gist.html_url}</a></h1>
-      <p>{gist.description}</p>
+      <div className='bg-gray-500'>
       {/* getting all file names for each gist, used Object.keys so that react does not give us warning about missing keys*/}
       {Object.keys(gist.files).map(filename => (
-            <p key={filename}> { gist.files[filename].filename}</p>
+        <div>
+            <p key={filename}> <a href={gist.html_url}>{ gist.files[filename].filename}</a></p>
+            <p>{gist.files[filename].language}</p>
+            </div>
           ))}
+          <div>
+          <p>{extractDate(gist.created_at )}</p>
+          </div>
       </div>
-    ))}</div>
+    ))}
+    </div>
   )
 }
 

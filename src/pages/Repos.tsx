@@ -2,7 +2,7 @@ import { GitContext } from '../context/UserContext';
 import { FC, useContext } from 'react';
 import { Repo } from 'interfaces/Repo';
 
-function extractDate(dateTimeString: string): string {
+export function extractDate(dateTimeString: string): string {
   const datePart = dateTimeString.split('T')[0];
   return datePart;
 }
