@@ -18,7 +18,7 @@ const Gists:FC = () => {
           {Object.keys(gist.files).map((filename) => (
             <div key={filename}>
               <a
-                href=""
+                href={gist.html_url}
                 target="_blank"
                 rel="noreferrer"
                 className="text-[1rem] tracking-[0.2rem] font-[600]"
