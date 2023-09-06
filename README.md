@@ -4,21 +4,21 @@
 GitHub Viewer README
 Welcome to GitHub Viewer, a web application that allows you to browse GitHub repositories and view their details. This README will provide you with essential information about the project, including its setup, dependencies, and usage.
 
-# Table of Contents
-# Introduction
-# Getting Started
-# Prerequisites
-# Installation
-# Usage
-# Scripts
-# Dependencies
-# Development Dependencies
-# Contributing
-# License
-## 1. Introduction
+#Table of Contents
+#Introduction
+#Getting Started
+#Prerequisites
+#Installation
+#Usage
+#Scripts
+#Dependencies
+#Development Dependencies
+#Contributing
+## License
+1. Introduction
 GitHub Viewer is a web application built using React and other modern technologies to provide an intuitive interface for exploring GitHub repositories. You can browse repositories, view their details, and navigate through the GitHub ecosystem effortlessly.
 
-## 2. Getting Started
+2. Getting Started
 Prerequisites
 Before you begin, ensure you have the following prerequisites installed on your system:
 
@@ -42,7 +42,7 @@ Install dependencies using Yarn:
 bash
 Copy code
 yarn install
-### 3. Usage
+3. Usage
 To start the development server and run the application locally, use the following command:
 
 bash
@@ -50,7 +50,7 @@ Copy code
 yarn dev
 This will start the development server, and you can access the GitHub Viewer application in your web browser at http://localhost:3000.
 
-## 4. Scripts
+4. Scripts
 This project includes the following Yarn scripts in the package.json file:
 
 dev: Starts the development server using Vite.
@@ -59,40 +59,22 @@ lint: Runs ESLint to check for code style and formatting issues.
 preview: Starts a Vite preview server for production builds.
 You can run these scripts by executing yarn <script-name> in your terminal.
 
-## 5. Dependencies
+5. Dependencies
 GitHub Viewer relies on several external packages and libraries, including:
 
-@nextui-org/react: React components for building the user interface.
-axios: HTTP client for making API requests.
-framer-motion: Animation library for smooth transitions.
-react: The core React library.
-react-dom: React's DOM rendering library.
-react-router-dom: React router for managing page navigation.
+#### @nextui-org/react: React components for building the user interface.
+#### axios: HTTP client for making API requests.
+#### framer-motion: Animation library for smooth transitions.
+#### react: The core React library.
+### react-dom: React's DOM rendering library.
+#### react-router-dom: React router for managing page navigation.
 These dependencies are automatically installed when you run yarn install.
 
-## 6. Development Dependencies
-Development dependencies include tools and plugins for code quality and development workflow. Some of the key development dependencies are:
 
-@typescript-eslint/eslint-plugin: ESLint plugin for TypeScript.
-@typescript-eslint/parser: TypeScript parser for ESLint.
-@vitejs/plugin-react: Vite plugin for React.
-autoprefixer: CSS autoprefixer for browser compatibility.
-daisyui: A utility-first CSS framework.
-eslint: Linter for JavaScript and TypeScript.
-eslint-plugin-react-hooks: ESLint plugin for React hooks.
-eslint-plugin-react-refresh: ESLint plugin for React Refresh.
-postcss: CSS post-processor for transformations.
-prettier: Code formatter.
-prettier-plugin-tailwindcss: Prettier plugin for Tailwind CSS.
-tailwindcss: A utility-first CSS framework.
-typescript: TypeScript compiler.
-vite: Fast development server and bundler.
-These development dependencies assist in maintaining code quality and ensuring smooth development workflows.
-
-## 7. Contributing
+7. Contributing
 Contributions to GitHub Viewer are welcome! If you find issues, have suggestions, or want to contribute to the project, please follow the guidelines outlined in the CONTRIBUTING.md file.
 
-## 8. License
+8. License
 This project is licensed under the MIT License. You can find more information in the LICENSE file.
 
 Thank you for using GitHub Viewer! If you have any questions or encounter any issues, please feel free to open an issue on the GitHub repository or reach out to the project maintainers.
